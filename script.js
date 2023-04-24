@@ -79,7 +79,9 @@ function insertVideo(e) {
   var selectedVideo = rightVideo[randomIndex];
   var videoID = selectedVideo.link;
   var videoURL =
-    "https://www.youtube.com/embed/" + videoID + "?autoplay=1&controls=0";
+    "https://www.youtube.com/embed/" +
+    videoID +
+    "?autoplay=1&controls=0&enablejsapi=1";
   player.src = videoURL;
 }
 
@@ -96,7 +98,9 @@ function insertVideo2(e) {
   var selectedVideo = rightVideo[randomIndex];
   var videoID = selectedVideo.link;
   var videoURL =
-    "https://www.youtube.com/embed/" + videoID + "?autoplay=1&controls=0";
+    "https://www.youtube.com/embed/" +
+    videoID +
+    "?autoplay=1&controls=0&enablejsapi=1";
   player.src = videoURL;
 }
 
@@ -111,10 +115,33 @@ moodBtn.forEach(
 var today = new Date();
 var time = today.getHours();
 
-if (time < 12) {
+if (time > 4 && time < 12) {
   document.querySelector("body").style.backgroundImage =
     "url(https://rare-gallery.com/uploads/posts/1227279-morning.jpg";
-} else {
+} else if (time >= 12 && time < 16) {
+  document.querySelector("body").style.backgroundImage =
+    "url(https://wallpapercave.com/wp/wp10969231.jpg)";
+} else if (time >= 16 && time < 20) {
   document.querySelector("body").style.backgroundImage =
     "url(https://cdn.wallpapersafari.com/88/85/d4PJmW.jpg)";
+} else if (time >= 20) {
+  document.querySelector("body").style.backgroundImage =
+    "https://wallpaperwaifu.com/wp-content/uploads/2021/01/lofi-coffee-shop-night-thumb.jpg";
+} else if (time >= 0 && time < 4) {
+  document.querySelector("body").style.backgroundImage =
+    "url(https://wallpapercave.com/wp/wp5805430.jpg)";
 }
+
+// !=============== SHOW TIME ===============
+
+const timeDisplay = document.querySelector(".time");
+
+function updateTimeDisplay() {
+  var currentTime = new Date();
+  var hrs = currentTime.getHours();
+  var mins = currentTime.getMinutes();
+  var currentTimeDisplay = hrs + ":" + mins;
+  timeDisplay.innerHTML = currentTimeDisplay;
+}
+
+setInterval(updateTimeDisplay, 10);

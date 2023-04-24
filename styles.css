@@ -36,6 +36,12 @@ h1 {
   margin: 0;
 }
 
+.time {
+  margin: 1rem;
+  color: #e6f0f4;
+  letter-spacing: 0.5rem;
+}
+
 .outer-container {
   margin: auto;
   display: flex;
