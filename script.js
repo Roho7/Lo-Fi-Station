@@ -121,12 +121,12 @@ if (time > 4 && time < 12) {
 } else if (time >= 12 && time < 16) {
   document.querySelector("body").style.backgroundImage =
     "url(https://wallpapercave.com/wp/wp10969231.jpg)";
-} else if (time >= 16 && time < 20) {
+} else if (time >= 16 && time > 20) {
   document.querySelector("body").style.backgroundImage =
     "url(https://cdn.wallpapersafari.com/88/85/d4PJmW.jpg)";
-} else if (time >= 20) {
+} else if (time >= 20 && time <= 23) {
   document.querySelector("body").style.backgroundImage =
-    "https://wallpaperwaifu.com/wp-content/uploads/2021/01/lofi-coffee-shop-night-thumb.jpg";
+    "url(https://wallpaperwaifu.com/wp-content/uploads/2021/01/lofi-coffee-shop-night-thumb.jpg)";
 } else if (time >= 0 && time < 4) {
   document.querySelector("body").style.backgroundImage =
     "url(https://wallpapercave.com/wp/wp5805430.jpg)";
@@ -140,8 +140,62 @@ function updateTimeDisplay() {
   var currentTime = new Date();
   var hrs = currentTime.getHours();
   var mins = currentTime.getMinutes();
+
+  if (mins < 10) {
+    mins = "0" + mins;
+  }
+
   var currentTimeDisplay = hrs + ":" + mins;
   timeDisplay.innerHTML = currentTimeDisplay;
 }
 
 setInterval(updateTimeDisplay, 10);
+
+// !============ POMODORO ====================
+const pomoCount = document.querySelector(".pomo-timer");
+const timerBox = document.querySelector(".pomo-container");
+const pomoBtn = document.querySelector(".pomo-btn");
+const breakAudio = document.querySelector(".break-audio");
+const pomoAudio = document.querySelector(".pomo-audio");
+let countdownInterval;
+
+function startPomo() {
+  pomoCount.innerHTML = 20;
+  countdownInterval = setInterval(() => {
+    let count = parseInt(pomoCount.innerText);
+
+    if (count === 0) {
+      clearInterval(countdownInterval);
+      startBreak();
+      breakAudio.play();
+    } else {
+      pomoCount.innerHTML = count - 1;
+    }
+  }, 60000);
+}
+
+function startBreak() {
+  pomoCount.innerHTML = 5;
+  breakInterval = setInterval(() => {
+    let count = parseInt(pomoCount.innerHTML);
+    if (count === 0) {
+      pomoAudio.play();
+      clearInterval(breakInterval);
+      startPomo();
+    } else {
+      pomoCount.innerHTML = count - 1;
+    }
+  }, 60000);
+}
+pomoBtn.addEventListener("click", function () {
+  if (countdownInterval) {
+    pomoBtn.innerHTML = "Start Pomo";
+    clearInterval(countdownInterval);
+    countdownInterval = null;
+    timerBox.style.display = "none";
+  } else {
+    timerBox.style.display = "block";
+    pomoBtn.innerHTML = "Stop Pomo";
+    startPomo();
+  }
+});
