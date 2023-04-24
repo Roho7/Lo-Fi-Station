@@ -29,6 +29,42 @@ var videos = [
     mood: "study",
     time: "evening",
   },
+  {
+    name: "Evening Groove 1",
+    link: "v97Nu7mvYw4",
+    mood: "groove",
+    time: "evening",
+  },
+  {
+    name: "Evening Study 1",
+    link: "0L38Z9hIi5s",
+    mood: "study",
+    time: "evening",
+  },
+  {
+    name: "Study Morning 1",
+    link: "c3suauAz0zQ",
+    mood: "study",
+    time: "morning",
+  },
+  {
+    name: "Morning Groove 1",
+    link: "fhdX3Wcxwas",
+    mood: "groove",
+    time: "morning",
+  },
+  {
+    name: "Evening Groove 2",
+    link: "yYzKC7sEISg",
+    mood: "groove",
+    time: "evening",
+  },
+  {
+    name: "Morning relax 2",
+    link: "JwftmUv3T7M",
+    mood: "relax",
+    time: "morning",
+  },
 ];
 
 const player = document.querySelector("iframe");
