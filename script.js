@@ -121,10 +121,10 @@ if (time > 4 && time < 12) {
 } else if (time >= 12 && time < 16) {
   document.querySelector("body").style.backgroundImage =
     "url(https://wallpapercave.com/wp/wp10969231.jpg)";
-} else if (time >= 16 && time > 20) {
+} else if (time >= 16 && time < 20) {
   document.querySelector("body").style.backgroundImage =
     "url(https://cdn.wallpapersafari.com/88/85/d4PJmW.jpg)";
-} else if (time >= 20 && time <= 23) {
+} else if (time >= 20) {
   document.querySelector("body").style.backgroundImage =
     "url(https://wallpaperwaifu.com/wp-content/uploads/2021/01/lofi-coffee-shop-night-thumb.jpg)";
 } else if (time >= 0 && time < 4) {
