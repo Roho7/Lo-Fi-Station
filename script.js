@@ -144,6 +144,9 @@ function updateTimeDisplay() {
   if (mins < 10) {
     mins = "0" + mins;
   }
+  if (hrs < 10) {
+    hrs = "0" + hrs;
+  }
 
   var currentTimeDisplay = hrs + ":" + mins;
   timeDisplay.innerHTML = currentTimeDisplay;
@@ -197,5 +200,15 @@ pomoBtn.addEventListener("click", function () {
     timerBox.style.display = "block";
     pomoBtn.innerHTML = "Stop Pomo";
     startPomo();
+  }
+});
+
+const showHome = document.querySelector(".show-home");
+
+showHome.addEventListener("click", () => {
+  if (player.style.opacity != "0") {
+    player.style.opacity = "0";
+  } else {
+    player.style.opacity = "1";
   }
 });
