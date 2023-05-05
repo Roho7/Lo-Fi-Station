@@ -31,7 +31,7 @@ body {
 
 h1 {
   color: #e6f0f4;
-  font-size: 8rem;
+  font-size: 6rem;
   mix-blend-mode: overlay;
   margin: 0;
   text-align: center;
@@ -73,30 +73,20 @@ button:hover {
   mix-blend-mode: color-dodge;
 }
 
-.sun {
-  height: 200px;
-  width: 200px;
-  border-radius: 50%;
-
-  background-color: var(--morning-2);
-  position: absolute;
-  z-index: -99;
-  top: 50px;
-  filter: blur(10px);
-}
-
-.bg-video {
+#player {
+  opacity: 1;
   position: absolute;
   height: 150%;
   width: 150%;
   top: -25%;
   left: -25%;
-  z-index: -10;
+  z-index: -1000;
 }
 
 .btn-container {
   display: flex;
   flex-wrap: wrap;
+  position: relative;
   /* align-items: center; */
   justify-content: center;
 }
@@ -114,12 +104,7 @@ button:hover {
   top: 0px;
   right: 0px;
   padding: 1rem;
-
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(8px);
-  border-radius: 10px;
+  width: 200px;
 }
 
 .pomo-container > p {
@@ -137,6 +122,48 @@ button:hover {
   position: absolute;
   top: 10px;
   left: 10px;
+}
+
+button {
+  z-index: 1000;
+}
+
+.slidecontainer {
+  z-index: 1000;
+  display: flex;
+  gap: 0.5rem;
+  color: #e6f0f4;
+  align-items: center;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.4);
+  outline: none;
+  overflow: hidden;
+}
+
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: -407px 0 0 400px rgba(255, 255, 255, 1);
+  cursor: pointer;
+}
+
+.glass {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 10px;
 }
 
 @media (max-width: 768px) {

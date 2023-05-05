@@ -6,11 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="styles.css" />
-    <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/5b220d91d6.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Mood Setter</title>
   </head>
   <body class="">
-    <div class="pomo-container">
-      <p>POMODORO</p>
+    <div class="pomo-container glass">
+      <p class="pomo-txt">POMODORO</p>
       <div class="timer-box">
         <h2 class="pomo-timer"></h2>
         <span>mins left</span>
@@ -18,34 +22,51 @@
     </div>
     <div class="outer-container">
       <h3 class="time"></h3>
-      <button class="show-home">Show/Hide Video</button>
-      <button class="pomo-btn">Start POMO</button>
+      <button class="show-home"><i class="fa-solid fa-eye-slash"></i></button>
+      <button class="pomo-btn">
+        <i class="fa-solid fa-stopwatch-20"></i>
+      </button>
 
       <h1>Set the Mood</h1>
+
       <div class="btn-container">
         <button class="time-btn morning-btn" data-time="morning">
-          Morning
+          <i class="fa-solid fa-cloud-sun"></i>
         </button>
         <button class="time-btn evening-btn" data-time="evening">
-          Evening
+          <i class="fa-solid fa-moon"></i>
         </button>
       </div>
       <!-- <h2>Play by Mood</h2> -->
       <div class="btn-container">
-        <button class="time-btn study-btn" data-mood="study">Study</button>
-        <button class="time-btn relax-btn" data-mood="relax">Relax</button>
-        <button class="time-btn groove-btn" data-mood="groove">Groove</button>
+        <button class="time-btn study-btn" data-mood="study">
+          <i class="fa-solid fa-book-open"></i>
+        </button>
+        <button class="time-btn relax-btn" data-mood="relax">
+          <i class="fa-solid fa-umbrella-beach"></i>
+        </button>
+        <button class="time-btn groove-btn" data-mood="groove">
+          <i class="fa-solid fa-champagne-glasses"></i>
+        </button>
       </div>
-      <!-- <iframe
-        src="https://www.youtube.com/embed/NJuSStkIZBg"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"
-        allowfullscren
-        class="aspect-video"
-      ></iframe> -->
+
+      <div class="slidecontainer">
+        <i class="fa-solid fa-volume-low"></i>
+        <input
+          type="range"
+          min="1"
+          max="100"
+          value="50"
+          class="slider"
+          id="myRange"
+        />
+        <i class="fa-solid fa-volume-high"></i>
+      </div>
     </div>
-    <iframe
+    <div class="player-container">
+      <div id="player"></div>
+    </div>
+    <!-- <iframe
       src=""
       title="YouTube video player"
       frameborder="0"
@@ -53,9 +74,8 @@
       allowfullscren
       class="bg-video"
       id="iframe"
-    ></iframe>
+    ></iframe> -->
     <audio class="break-audio" src="alarm_01.mp3"></audio>
     <audio class="pomo-audio" src="burmese_gong.mp3"></audio>
-    <!-- <div class="sun"></div> -->
   </body>
 </html>
