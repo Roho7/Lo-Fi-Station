@@ -177,5 +177,11 @@ button {
     background-size: calc(100vh * 2);
     background-position: center;
     background-repeat: no-repeat;
+    overflow: hidden;
+  }
+  .player-container {
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
   }
 }

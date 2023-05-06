@@ -203,9 +203,12 @@ const timerBox = document.querySelector(".pomo-container");
 const pomoBtn = document.querySelector(".pomo-btn");
 const breakAudio = document.querySelector(".break-audio");
 const pomoAudio = document.querySelector(".pomo-audio");
+const pomoTxt = document.querySelector(".pomo-txt");
+
 let countdownInterval;
 
 function startPomo() {
+  pomoTxt.innerHTML = "Pomodoro";
   pomoCount.innerHTML = 20;
   countdownInterval = setInterval(() => {
     let count = parseInt(pomoCount.innerText);
@@ -221,8 +224,6 @@ function startPomo() {
 }
 
 function startBreak() {
-  const pomoTxt = document.querySelector(".pomo-txt");
-
   pomoTxt.innerHTML = "Take a break";
   pomoCount.innerHTML = 5;
   breakInterval = setInterval(() => {
