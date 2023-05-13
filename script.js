@@ -152,6 +152,7 @@ const volumeSlider = document.getElementById("myRange");
 volumeSlider.oninput = function () {
   console.log("vol change");
   ytPlayer.setVolume(this.value);
+  ytPlayer.unmute();
 };
 
 // ! ============ BG COLOR SHIFT =================
